@@ -1,6 +1,7 @@
 import React from 'react'
 import "../Style/Home.css";
 
+
 const Home = () => {
   return (
     <div id="screen">
@@ -44,9 +45,9 @@ const Home = () => {
 
     <div id="body">
         <div>
-            <p style="cursor: pointer;" onclick="window.location.href=`./MULTIPLEPRODUCT.html`">ALL JEWELLRY</p>
-            <p style="cursor: pointer;" onclick="window.location.href=`./MULTIPLEPRODUCT.html`">GOLD</p>
-            <p style="cursor: pointer;" onclick="window.location.href=`./MULTIPLEPRODUCT.html`" >DIAMOND</p>
+            <p>ALL JEWELLRY</p>
+            <p>GOLD</p>
+            <p>DIAMOND</p>
             <p>EARRINGS</p>
             <p>RINGS</p>
             <p>MIA</p>
@@ -423,6 +424,7 @@ const Home = () => {
     
             </div>
             <div id="design8">
+                
                 <button>Explore Now</button>
              </div>
              <div id="design9">
@@ -532,8 +534,8 @@ const Home = () => {
 
             </div>
             <div>
-                <img src="./apple store.webp"/>
-                <img src="./googleplay.webp"/>
+                <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
+                <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
             </div>
         </div>
         </div>
