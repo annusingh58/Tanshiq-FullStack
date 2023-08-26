@@ -1,0 +1,361 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+#screen{
+    /* height: 4000px; */
+    width: 100%;
+    /* border:4px solid orange; */
+}
+
+#navbar{
+    /* height: 90px; */
+    width: 100%;
+    /* border:4px solid green; */
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(242,233,233);
+    position: fixed;
+    top:0;
+
+}
+
+#nb{
+    height: 80px;
+    width:16%;
+    /* border:1px solid red; */
+    margin-left: 45px;
+    
+}
+
+#nb>div{
+    height: 70px;
+    width:73%;
+    /* border:1px solid yellow; */
+    padding-left: 45px;
+    /* background-color: rgb(242,233,233); */
+
+}
+#nb>div>img{
+    margin-top: 5px;
+    height: 100%;
+    width:100%;
+    /* border:1px solid red; */
+    background-color: rgb(242,233,233);
+
+
+}
+
+
+#nb2{
+    height: 80px;
+    width:60%;
+    /* border:1px solid red; */
+    display: flex;
+    align-items: center;
+
+    
+}
+#nb2>div{
+    width:90%;
+    height:40px ;
+    /* border: 1px solid black; */
+    margin-left: 15px;
+
+}
+#nb2>div>input{
+    width:90%;
+    height:40px;
+    
+    
+}
+
+
+#nb3{
+    height: 80px;
+    width:34%;
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: space-between;
+    margin-right: 95px;
+    align-items: center;
+    
+}
+#nb3>div>p{
+    font-size:12px;
+    color: rgb(138,79,78);
+    font-weight: normal;
+    margin-top: 5px;
+    
+}
+#nb3>div>i{
+    font-size:22px;
+    color: rgb(138,79,78);
+    
+    
+}
+
+#navbar2{
+    width:100%;
+    height:50px;
+    /* border:1px solid black; */
+    /* padding-left: 85px; */
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navbar2>div{
+    width:87%;
+    height: 100%;
+   justify-content: space-between; 
+   align-items: center;
+   display: flex;
+
+   /* border:2px solid green; */
+}
+#navbar2>div>p{
+    font-size: 14px;
+}
+
+
+
+#navbar3{
+    width:100%;
+    height:50px;
+    /* border:1px solid red; */
+    /* padding-left: 85px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 2px 12px gainsboro;
+}
+#navbar3>div{
+    width:87%;
+    height: 100%;
+   justify-content: space-between; 
+   align-items: center;
+   display: flex;
+   /* border:2px solid rgb(36, 226, 36); */
+}
+#navbar3>div>p{
+    font-size: 12px;
+    color: brown;
+
+}
+#navbar3>div>p>span{
+    margin-left: 5px;
+
+}
+
+
+
+#body{
+    /* height:2500px ; */
+    width:90%;
+    margin: auto;
+    padding-top:20px;
+    /* border:1px solid blue; */
+}
+#body1{
+    height: 180px;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+#body1>p>span{
+    color: brown;
+    font-weight: bold;
+}
+#body1>p{
+    font-size: 17px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+#body1>h2{
+    margin-bottom: 20px;
+}
+#body1>div{
+    height: 60px;
+    width:100%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+#body1>div>button{
+    width: 18%;
+    height: 100%;
+    background-color: white;
+
+}
+#body1>div>button:nth-child(1){
+    border: 1px solid rgb(202, 199, 199);
+    color: grey;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#body1>div>button:nth-child(1)>span{
+        color: brown;
+        margin-right: 5px;
+}
+#body1>div>button:nth-child(2){
+    color: brown;
+    border:1px solid brown;
+    border-radius: 10px;
+
+}
+#body2{
+    /* height: 1000px; */
+    width : 100%;
+    /* border:1px solid green; */
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#body2>div{
+    height: 400px;
+    width:24%;
+    /* border:1px solid gray; */
+    margin-bottom: 45px;
+
+
+}
+#body2>div:hover{
+    box-shadow: 8px 10px 18px gainsboro ;
+
+
+}
+
+
+
+#body2>div>div:nth-child(1){
+    height: 250px;
+    width:100%;
+    /* border:5px solid red; */
+}
+#body2>div>div:nth-child(1)>img{
+    height: 100%;
+    width: 100%;
+    /* border:1px solid black; */
+}
+#body2>div>div:nth-child(2){
+    height:120px;
+    width: 100%;
+    /* border: 1px solid yellow; */
+    padding: 10px;
+}
+#body2>div>div:nth-child(2)>h6{
+    margin-top: 15px;
+    font-size: 14px;
+}
+#body2>div>div:nth-child(2)>h5{
+    margin-top: 9px;
+    font-size: 16px;
+}
+#body2>div>div:nth-child(2)>p{
+    font-size: 14px;
+    margin-top: 5px;
+}
+#body2>div>div:nth-child(2)>button{
+    height: 35px;
+    width:100%;
+    font-weight: bold;
+    border: 1px solid brown;
+    font-size: 14px;
+    background-color: white;
+    margin-top: 10px;
+}
+#body2>div>div:nth-child(2)>button:hover{
+    background-color: brown;
+    color: white;
+    border: none;
+}
+
+
+#footer{
+    /* height: 850px; */
+    width: 100%;
+    /* border: 5px solid red; */
+    background-color: rgb(242,233,233);
+    color: white;
+    margin-top: 55px;
+    
+   }
+   #footer>div{
+    width:90% ;
+    margin:auto;
+    /* border-bottom: 2px solid gray; */
+   }
+   #footer >div:nth-child(1){
+    width: 90%;
+    height:450px ;
+    border-bottom: 1px solid gray;
+    display: flex;
+    margin-bottom: 25px;
+    
+   }
+   #footer >div:nth-child(1)>div{
+    width: 35%;
+    height: 450px;
+    /* border: 4px solid gold; */
+    
+   }
+   #footer >div:nth-child(1)>div>h4{
+    margin-top: 55px;
+    /* margin-left: px; */
+    margin-bottom: 35px;
+    font-size: 20px;
+    color: brown;
+
+   }
+   #footer >div:nth-child(1)>div>p{
+    margin-top: 20px;
+    font-size: 20px;
+    color: black;
+   }
+   #footer >div:nth-child(1)>div:nth-child(4)>img{
+    margin-top: 45px;
+    height: 75px;
+   }
+   #productsT{
+    width:100%;
+    height:300px;
+    /* border:1px solid red; */
+    display: flex;
+    justify-content: space-between;
+   }
+   #singlePro{
+    width:24%;
+    height:300px;
+    /* border:1px solid grey; */
+    text-align: center;
+   }
+   #singlePro>img{
+    width: 100%;
+    height: 80%;
+
+   }
+
+
+
+   @media screen and (max-width:750px){
+    #navbar2{
+        display:none;
+    }
+    #body1>div:nth-child(3){
+        display: none;
+    }
+    #body1>p{
+        display: none;
+    }
+    #body1{
+        /* border:1px solid red; */
+        padding-top:30px;
+        height:100px
+    }
+    #body2>div{
+        width:48%;
+    }
+   }
