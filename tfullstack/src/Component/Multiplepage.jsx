@@ -4,7 +4,7 @@ import "../Style/Multiplepage.css"
 const Multiplepage = () => {
   return (
     
-         <div id="screen">
+         <div id="screen-multiple">
         <div id="navbar">
             <div id="nb">
                 <div>             
@@ -72,7 +72,7 @@ const Multiplepage = () => {
 
         </div>
 
-        <div id="body">
+        <div id="body-multiple">
             <div id="body1">
             <p>Home| <span>jumka Earrings</span></p>
             <h2>jhumka-Earrings | 116 DESIGNS</h2>
@@ -88,7 +88,7 @@ const Multiplepage = () => {
 
 
 
-             <div id="body2">
+             <div id="body2-multiple">
                 <div>
                     <div>
                         <img src="https://staticimg.titan.co.in/Tanishq/Catalog/514021JDEABAP1_1.jpg?impolicy=pqmed&imwidth=640"/>

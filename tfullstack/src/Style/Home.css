@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-#screen{
+#screen-home{
     /* height: 4000px; */
     width: 100%;
     /* border:4px solid orange; */
@@ -97,7 +97,7 @@
 }
 
 
-#body{
+#body-home{
     width:100%;
     height:70px;
     /* border:1px solid black; */
@@ -107,7 +107,7 @@
     justify-content: center;
     align-items: center;
 }
-#body>div{
+#body-home>div{
     width:87%;
     height: 100%;
    justify-content: space-between; 
@@ -116,7 +116,7 @@
    /* margin-top:25px; */
    /* border:2px solid green; */
 }
-#body>div>p{
+#body-home>div>p{
     font-size: 15px;
 }
 
@@ -131,7 +131,7 @@
     /* border : 1px solid red; */
 }
 
-#body2{
+#body2-home{
     width:80%;
     /* height:7000px; */
     /* border:2px solid blue; */
@@ -781,11 +781,11 @@ background-image: url("https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/48e2f
 
 
    @media screen and (max-width:1000px){
-    #body>div{
+    #body-home>div{
         width:98%;
         
     }
-    #body>div>p{
+    #body-home>div>p{
     font-size: 13px;
 }
 

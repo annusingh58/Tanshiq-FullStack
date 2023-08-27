@@ -3,7 +3,7 @@ import "../Style/Register.css"
 
 const Register = () => {
   return (
-    <div class="screen">
+    <div class="screen-register">
         <div class="body">
             <div>
                  <h4>Signup </h4>

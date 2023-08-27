@@ -4,7 +4,7 @@ import "../Style/Home.css";
 
 const Home = () => {
   return (
-    <div id="screen">
+    <div id="screen-home">
     <div id="navbar">
         <div id="nb">
             <div>             
@@ -43,7 +43,7 @@ const Home = () => {
 
     </div>
 
-    <div id="body">
+    <div id="body-home">
         <div>
             <p>ALL JEWELLRY</p>
             <p>GOLD</p>
@@ -62,7 +62,7 @@ const Home = () => {
         <img src="https://staticimg.titan.co.in/Tanishq/Banners/akshaya-tritiya/images/banners/DBanner7.jpg"/>
 
     </div>
-    <div id="body2">
+    <div id="body2-home">
         <div class="same">
         <h1>Shop Jewellery By Category</h1>
         <p>Browse through your favourite categories. We've got them all!</p>
