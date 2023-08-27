@@ -240,17 +240,17 @@
     width: 100%;
     /* border:1px solid black; */
 }
-#body2>div>div:nth-child(2){
+#body2-multiple>div>div:nth-child(2){
     height:120px;
     width: 100%;
     /* border: 1px solid yellow; */
     padding: 10px;
 }
-#body2>div>div:nth-child(2)>h6{
+#body2-multiple>div>div:nth-child(2)>h6{
     margin-top: 15px;
     font-size: 14px;
 }
-#body2>div>div:nth-child(2)>h5{
+#body2-multiple>div>div:nth-child(2)>h5{
     margin-top: 9px;
     font-size: 16px;
 }
@@ -258,7 +258,7 @@
     font-size: 14px;
     margin-top: 5px;
 }
-#body2>div>div:nth-child(2)>button{
+#body2-multiple>div>div:nth-child(2)>button{
     height: 35px;
     width:100%;
     font-weight: bold;
@@ -267,14 +267,14 @@
     background-color: white;
     margin-top: 10px;
 }
-#body2>div>div:nth-child(2)>button:hover{
+#body2-multiple>div>div:nth-child(2)>button:hover{
     background-color: brown;
     color: white;
     border: none;
 }
 
 
-#footer{
+#footer-multiple{
     /* height: 850px; */
     width: 100%;
     /* border: 5px solid red; */
@@ -283,12 +283,12 @@
     margin-top: 55px;
     
    }
-   #footer>div{
+   #footer-multiple>div{
     width:90% ;
     margin:auto;
     /* border-bottom: 2px solid gray; */
    }
-   #footer >div:nth-child(1){
+   #footer-multiple >div:nth-child(1){
     width: 90%;
     height:450px ;
     border-bottom: 1px solid gray;
@@ -296,13 +296,13 @@
     margin-bottom: 25px;
     
    }
-   #footer >div:nth-child(1)>div{
+   #footer-multiple >div:nth-child(1)>div{
     width: 35%;
     height: 450px;
     /* border: 4px solid gold; */
     
    }
-   #footer >div:nth-child(1)>div>h4{
+   #footer-multiple >div:nth-child(1)>div>h4{
     margin-top: 55px;
     /* margin-left: px; */
     margin-bottom: 35px;
@@ -310,12 +310,12 @@
     color: brown;
 
    }
-   #footer >div:nth-child(1)>div>p{
+   #footer-multiple >div:nth-child(1)>div>p{
     margin-top: 20px;
     font-size: 20px;
     color: black;
    }
-   #footer >div:nth-child(1)>div:nth-child(4)>img{
+   #footer-multiple >div:nth-child(1)>div:nth-child(4)>img{
     margin-top: 45px;
     height: 75px;
    }
@@ -344,18 +344,18 @@
     #navbar2{
         display:none;
     }
-    #body1>div:nth-child(3){
+    #body1-multiple>div:nth-child(3){
         display: none;
     }
-    #body1>p{
+    #body1-multiple>p{
         display: none;
     }
-    #body1{
+    #body1-multiple{
         /* border:1px solid red; */
         padding-top:30px;
         height:100px
     }
-    #body2>div{
+    #body2-multiple>div{
         width:48%;
     }
    }

@@ -82,9 +82,9 @@ const Multiplepage = () => {
            </div>
             </div>
 
-            <div id="productsT">
+            {/* <div id="productsT">
 
-            </div>
+            </div> */}
 
 
 
@@ -359,7 +359,7 @@ const Multiplepage = () => {
             
         </div>
         
-        <div id="footer">
+        <div id="footer-multiple">
             <div>
                 <div>
                     <h4>Useful Links</h4>
@@ -387,8 +387,9 @@ const Multiplepage = () => {
 
                 </div>
                 <div>
-                    <img src="./apple store.webp"/>
-                    <img src="./googleplay.webp"/>
+                <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
+                <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
+
                 </div>
             </div>
             </div>

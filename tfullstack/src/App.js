@@ -6,6 +6,7 @@ import Login from './Component/Login';
 import Home from './Component/Home';
 import Singlepage from './Component/Singlepage';
 import Multiplepage from './Component/Multiplepage';
+import Cart from './Component/Cart';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/home" element={<Home />}/>
         <Route exact path="/single" element={<Singlepage/>}/>
         <Route exact path="/multiplepage" element={<Multiplepage/>}/>
+        <Route exact path="/cart" element={<Cart />}/>
       </Routes>
     
     </>

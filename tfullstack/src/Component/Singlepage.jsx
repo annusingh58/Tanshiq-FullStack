@@ -3,7 +3,7 @@
  
  const Singlepage = () => {
    return (
-    <div className='screen'>   
+    <div className='screen-single'>   
     <div id="navbar">
         <div id="nb">
             <div>             
@@ -53,7 +53,7 @@
             <p>MORE</p>
         </div>
     </div>
-    <div id="home">
+    <div id="home-single">
              
             
         <div id="left">
@@ -98,9 +98,9 @@
         </div>
 
     </div>
-    <div id="slide">
+    {/* <div id="slide">
         <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/d1f34107-0514-42d9-9905-ce94f32695d2/desktop/Promises_Banner_DesktopU.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-d1f34107-0514-42d9-9905-ce94f32695d2-desktop-ouo1aRI"/>
-    </div>
+    </div> */}
     <div id="product">
         <h5>Product Details</h5>
         <p>Peacock motifs, along with a classic design are bound together to form these majestic Jhumkas. Look like a goddess from mythologies when you adorn this pair</p>
@@ -189,7 +189,7 @@
                 </div>
         </div>
     </div>
-    <div id="footer">
+    <div id="footer-single">
         <div>
             <div>
                 <h4>Useful Links</h4>
@@ -217,8 +217,9 @@
 
             </div>
             <div>
-                <img src="./apple store.webp"/>
-                <img src="./googleplay.webp"/>
+            <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
+
+                <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
             </div>
         </div>
     </div>
