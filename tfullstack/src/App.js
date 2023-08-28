@@ -18,6 +18,7 @@ function App() {
         <Route exact path="/single" element={<Singlepage/>}/>
         <Route exact path="/multiplepage" element={<Multiplepage/>}/>
         <Route exact path="/cart" element={<Cart />}/>
+        
       </Routes>
     
     </>

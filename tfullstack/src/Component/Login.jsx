@@ -1,18 +1,68 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import "../Style/Login.css";
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { AuthContext } from './Context/AuthContext';
+
 
 const Login = () => {
+    const[userData,setUserData]=useState({email:"",password:""});
+    const {state,dispatch}=useContext(AuthContext);
+
+    const router=useNavigate();
+    console.log(userData,"userData");
+
+    const handleChange=(event)=>{
+        setUserData({...userData,[event.target.name]:event.target.value})
+
+    }
+    const handleSubmit=async(event)=>{
+        event.preventDefault();
+        if(userData.email && userData.password){
+            try {
+                const response=await axios.post("http://localhost:2000/anu/login",{
+                    email:userData.email,
+                   password:userData.password
+
+                });
+                console.log(response,"response")
+                const data=response.data;
+                if(data.success){
+                    dispatch({
+                        type:"LOGIN",
+                        payload:data?.user
+                    });
+                    localStorage.setItem("JWTToken",JSON.stringify(data.token));
+                    alert(data.message);
+                    router('/home');
+                }
+                
+            } catch (error) {
+                console.log(error)
+                if(!error.response.data.success){
+                    alert(error.response.data.message)
+                }
+                
+            }
+
+        }
+        else{
+            alert("all field are required");
+        }
+    }
+    
+        
   return (
     <div class="screen-login">
-    <div class="body">
+    <div class="body-login">
         <div>
              <h4>Login </h4>
         <div>
-            <form onsubmit="login(event)">
-               <div id="form"> 
-                <div><input id="lemail" type="email" placeholder="Enter Email Id"/><br/></div>
-               <div><input id="lpassword" type="password" placeholder="password"/><br/></div>
-               <div><input type="submit" value="login"/></div>
+            <form onSubmit={handleSubmit}>
+               <div class="form"> 
+                <div><input name="email" type="email" placeholder="Enter Email Id" onChange={handleChange}/><br/></div>
+               <div><input name="password" type="password" placeholder="password" onChange={handleChange}/><br/></div>
+               <div><input name="submit" type='submit' value="Login"/></div>
             </div>
             </form>
            

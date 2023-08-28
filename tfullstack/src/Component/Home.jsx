@@ -1,8 +1,19 @@
 import React from 'react'
 import "../Style/Home.css";
+import { useContext } from 'react';
+import { AuthContext } from './Context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
+    const {state,dispatch}=useContext(AuthContext); 
+    const username = state?.user?.name;
+    const router=useNavigate();
+    const Logout=()=>{
+        dispatch({
+            type:"LOGOUT"
+        })
+    }
   return (
     <div id="screen-home">
     <div id="navbar">
@@ -24,11 +35,13 @@ const Home = () => {
             </div>
             <div>
                 <i class="fa-regular fa-user"></i>
-                <p>ACCOUNT</p>
-            
+                {username?<p>{username}</p>:<p onClick={()=>router('/login')}>LOGIN</p>}
+           
             </div>
             <div id="switch"></div>
-            <div id="logout"></div>
+            <div >
+             {username?<button onClick={Logout}>LOGOUT</button>:<button></button>}
+            </div>
             <div>
                 <i class="fa-regular fa-heart"></i>
                 <p>WISHLIST</p>
