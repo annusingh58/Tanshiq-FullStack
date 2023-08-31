@@ -36,7 +36,7 @@ const HandleAuthContext=({children})=>{
                     payload:response?.data?.user
                 })
             }
-           }
+           }    
         }
         getcurrentuser();
     },[])
