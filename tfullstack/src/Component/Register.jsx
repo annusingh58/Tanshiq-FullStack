@@ -46,7 +46,7 @@ const Register = () => {
                 }
             }
             else{
-                alert("all field are required");
+                alert("All field are required");
             }
         }
 

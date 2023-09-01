@@ -42,6 +42,7 @@ const Home = () => {
             <div >
              {username?<button onClick={Logout}>LOGOUT</button>:<button></button>}
             </div>
+
             <div>
                 <i class="fa-regular fa-heart"></i>
                 <p>WISHLIST</p>
