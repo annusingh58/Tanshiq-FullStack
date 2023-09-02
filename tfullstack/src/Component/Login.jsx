@@ -3,6 +3,7 @@ import "../Style/Login.css";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AuthContext } from './Context/AuthContext';
+import api from '../ApiConfig';
 
 
 const Login = () => {
@@ -20,7 +21,7 @@ const Login = () => {
         event.preventDefault();
         if(userData.email && userData.password){
             try {
-                const response=await axios.post("http://localhost:2000/anu/login",{
+                const response=await api.post("/login",{
                     email:userData.email,
                    password:userData.password
 

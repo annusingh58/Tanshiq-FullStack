@@ -1,108 +1,131 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "../Style/Multiplepage.css"
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Multiplepage = () => {
-  return (
-    
-         <div id="screen-multiple">
-        <div id="navbar">
-            <div id="nb">
-                <div>             
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHIvMR55RXNIxhyJbtIomYn-IWTJng7WDhlQ&usqp=CAU"/>
-                  </div>
-            </div>
-            <div id="nb2">
-                <div>
-                    <input type="search" placeholder="Search for Gold Jewellery,Diamond Jewellery and more.."/>
+    const [products, setProducts] = useState([]);
+    const router = useNavigate();
+    useEffect(() => {
+        async function getAllProducts() {
+            try {
+                const response = await axios.get("http://localhost:2000/anu/getallproducts");
+                if (response) {
+                    setProducts(response.data.products);
+                    console.log(response.data.products);
+                }
+            } catch (error) {
+                toast(error.response.data.message)
+            }
+        }
+        getAllProducts();
+    }, [])
+
+    return (
+
+        <div id="screen-multiple">
+            <div id="navbar">
+                <div id="nb">
+                    <div>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHIvMR55RXNIxhyJbtIomYn-IWTJng7WDhlQ&usqp=CAU" />
+                    </div>
                 </div>
-                 <div></div> 
+                <div id="nb2">
+                    <div>
+                        <input type="search" placeholder="Search for Gold Jewellery,Diamond Jewellery and more.." />
+                    </div>
+                    <div></div>
+                </div>
+                <div id="nb3">
+                    <div>
+                        <i class="fa-solid fa-store"></i>
+                        <p>STORES</p>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-user"></i>
+                        <p>ACCOUNT</p>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-heart"></i>
+                        <p>WISHLIST</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p>CART</p>
+                    </div>
+                </div>
+
+
+
             </div>
-            <div id="nb3">
+            <div id="navbar2">
                 <div>
-                    <i class="fa-solid fa-store"></i>
-                    <p>STORES</p>
-                </div>
-                <div>
-                    <i class="fa-regular fa-user"></i>
-                    <p>ACCOUNT</p>
-                </div>
-                <div>
-                    <i class="fa-regular fa-heart"></i>
-                    <p>WISHLIST</p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <p>CART</p>
+                    <p>ALL JEWELLRY</p>
+                    <p>GOLD</p>
+                    <p>DIAMOND</p>
+                    <p>EARRINGS</p>
+                    <p>RINGS</p>
+                    <p>MIA</p>
+                    <p>COLLECTION</p>
+                    <p>RIVAAH</p>
+                    <p>GOLDEN HARVEST</p>
+                    <p>CORPORATE GIFTING</p>
+                    <p>MORE</p>
                 </div>
             </div>
-
-            
-
-        </div>
-        <div id="navbar2">
-            <div>
-                <p>ALL JEWELLRY</p>
-                <p>GOLD</p>
-                <p>DIAMOND</p>
-                <p>EARRINGS</p>
-                <p>RINGS</p>
-                <p>MIA</p>
-                <p>COLLECTION</p>
-                <p>RIVAAH</p>
-                <p>GOLDEN HARVEST</p>
-                <p>CORPORATE GIFTING</p>
-                <p>MORE</p>
-            </div>
-        </div>
-        <div id="navbar3">
-            <div>
-                <p>PRICE<span><i class="fa-solid fa-chevron-down"></i></span></p>
-                <p>JEWELLERY TYPE<span><i class="fa-solid fa-chevron-down"></i></span></p>
-                <p>PRODUCT<span><i class="fa-solid fa-chevron-down"></i></span></p>
-                <p>GENDER<span><i class="fa-solid fa-chevron-down"></i></span></p>
-                <p>BRAND<span><i class="fa-solid fa-chevron-down"></i></span></p>
-                <p>METAL COLOUR<span><i class="fa-solid fa-chevron-down"></i></span></p>
-                <p>SEE MORE FILTER<span><i class="fa-solid fa-chevron-down"></i></span></p>
-            </div>   
-
-                
+            <div id="navbar3">
+                <div>
+                    <p>PRICE<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                    <p>JEWELLERY TYPE<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                    <p>PRODUCT<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                    <p>GENDER<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                    <p>BRAND<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                    <p>METAL COLOUR<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                    <p>SEE MORE FILTER<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                </div>
 
 
-            
 
-        </div>
 
-        <div id="body-multiple">
-            <div id="body1">
-            <p>Home| <span>jumka Earrings</span></p>
-            <h2>jhumka-Earrings | 116 DESIGNS</h2>
-           <div>
-            <button><span><i class="fa-regular fa-circle-right"></i></span>COMPARE</button>
-            <button>SORT BY : BEST SELLERS<span><i class="fa-solid fa-chevron-down"></i></span></button>
-           </div>
+
+
             </div>
 
-            {/* <div id="productsT">
+            <div id="body-multiple">
+                <div id="body1">
+                    <p>Home| <span>jumka Earrings</span></p>
+                    <h2>jhumka-Earrings | 116 DESIGNS</h2>
+                    <div>
+                        <button><span><i class="fa-regular fa-circle-right"></i></span>COMPARE</button>
+                        <button>SORT BY : BEST SELLERS<span><i class="fa-solid fa-chevron-down"></i></span></button>
+                    </div>
+                </div>
+
+                {/* <div id="productsT">
 
             </div> */}
 
 
 
-             <div id="body2-multiple">
-                <div>
-                    <div>
-                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/514021JDEABAP1_1.jpg?impolicy=pqmed&imwidth=640"/>
-                    </div>
-                    <div>
-                        <h6>Radiant Traditional jhumkas</h6>
-                        <h5>RS 78331</h5>
-                        <p>women | Earrings</p>
-                        <button>Explore Now</button>
+                {products?.length ? <div id="body2-multiple">
+                    {products.map((product) => (
+                        <div onClick={()=>router(`/single/${product._id}`)}>
+                            <div>
+                                <img src={product.image} />
+                            </div>
+                            <div>
+                                <h6>{product.name}</h6>
+                                <h5>RS {product.price}</h5>
+                                <p>women | Earrings</p>
+                                <button>Explore Now</button>
 
-                    </div>
+                            </div>
 
-                </div>
-                <div>
+                        </div>
+                    ))}
+
+                    {/* <div>
                     <div>
                         <img src="https://staticimg.titan.co.in/Tanishq/Catalog/511618JGRABA00.jpg?impolicy=pqmed&imwidth=640"/>
                     </div>
@@ -352,54 +375,54 @@ const Multiplepage = () => {
 
                     </div>
 
-                </div>
+                </div> */}
 
+
+                </div> : <div>loading</div>}
 
             </div>
-            
+
+            <div id="footer-multiple">
+                <div>
+                    <div>
+                        <h4>Useful Links</h4>
+                        <p>Delivery Information</p>
+                        <p>International Shipping</p>
+                        <p>Payment Options</p>
+                        <p>Track Your Order</p>
+                        <p>Returns</p>
+                        <p>Find a store</p>
+
+                    </div>
+                    <div>
+                        <h4>Information</h4>
+                        <p>Careers</p>
+                        <p>Blog</p>
+                        <p>Offers & Contest Details</p>
+                        <p>Help & FAQS</p>
+                        <p>About Tanishq</p>
+                    </div>
+                    <div>
+                        <h4>Contact Us</h4>
+                        <p>Write to Us</p>
+                        <p>Refunds & Cancellation </p>
+                        <p>Chat with Us</p>
+
+                    </div>
+                    <div>
+                        <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png" />
+                        <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png" />
+
+                    </div>
+                </div>
+            </div>
+
         </div>
-        
-        <div id="footer-multiple">
-            <div>
-                <div>
-                    <h4>Useful Links</h4>
-                    <p>Delivery Information</p>
-                    <p>International Shipping</p>
-                    <p>Payment Options</p>
-                    <p>Track Your Order</p>
-                    <p>Returns</p>
-                    <p>Find a store</p>
-                    
-                </div>
-                <div>
-                    <h4>Information</h4>
-                    <p>Careers</p>
-                    <p>Blog</p>
-                    <p>Offers & Contest Details</p>
-                    <p>Help & FAQS</p>
-                    <p>About Tanishq</p>
-                </div>
-                <div>
-                    <h4>Contact Us</h4>
-                    <p>Write to Us</p>
-                    <p>Refunds & Cancellation </p>
-                    <p>Chat with Us</p>
-
-                </div>
-                <div>
-                <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
-                <img src="https://www.tanishq.co.in/on/demandware.static/-/Library-Sites-TanishqSharedLibrary/default/dw3727ec18/images/footer/appstore-d.png"/>
-
-                </div>
-            </div>
-            </div>
-
-    </div>
 
 
 
-    
-  )
+
+    )
 }
 
 export default Multiplepage
