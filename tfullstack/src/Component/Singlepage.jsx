@@ -245,7 +245,7 @@ const Singlepage = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div
             </AuthProtected>
         </>
     )
