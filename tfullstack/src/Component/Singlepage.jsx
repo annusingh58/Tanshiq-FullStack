@@ -8,22 +8,25 @@ import { useNavigate } from 'react-router-dom';
 
 const Singlepage = () => {
     const [product, setProduct] = useState();
-    const router=useNavigate();
     const { id } = useParams();
 
     const {state}=useContext(AuthContext);
     console.log(state);
+
+    const router=useNavigate();
+
     // console.log(id);
 
     async function addCart(){
         try {
-            const response=await axios.post("http://localhost:/2000/anu/addToCart",{userId:state?.user?._id,productId:id})
-            if(response.data.success){
+            const response=await axios.post("http://localhost:2000/anu/addToCart",{userId:state?.user?._id,productId:id})
+            if(response?.data?.success){
                 alert(response.data.message);
                 router('/cart')
             }
         } catch (error) {
-            alert(error.response.data.message)
+            // alert(error?.response?.data?.message)
+            alert("adding cART")
         }
     }
     useEffect(() => {
@@ -120,7 +123,7 @@ const Singlepage = () => {
                                 <p>Gold Purity : 22 Karat</p>
                                 <p>Not sure what to buy? Checkout our <span>Buying Guides</span></p>
 
-                                <button>Add to Cart</button>
+                                <button onClick={addCart}>Add to Cart</button>
 
                             </div>
                             <div>
@@ -138,9 +141,7 @@ const Singlepage = () => {
                         </div>
 
                     </div> : <div>Loading..</div>}
-                    {/* <div id="slide">
-        <img src="https://www.tanishq.co.in/wps/wcm/connect/tanishqrt/d1f34107-0514-42d9-9905-ce94f32695d2/desktop/Promises_Banner_DesktopU.jpg?MOD=AJPERES&amp;CACHEID=ROOTWORKSPACE.Z18_90IA1H80O0T6206GQH590V3000-d1f34107-0514-42d9-9905-ce94f32695d2-desktop-ouo1aRI"/>
-    </div> */}
+          
                     <div id="product">
                         <h5>Product Details</h5>
                         <p>Peacock motifs, along with a classic design are bound together to form these majestic Jhumkas. Look like a goddess from mythologies when you adorn this pair</p>

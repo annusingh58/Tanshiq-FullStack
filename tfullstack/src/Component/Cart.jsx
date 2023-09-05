@@ -24,7 +24,7 @@ const Cart = () => {
     console.log(addCart);
   return (
     <div>
-            <div id="screen-cart">
+            <div className="screen-cart">
         <div id="navbar">
             <div id="nb">
                 <div>             
@@ -78,14 +78,16 @@ const Cart = () => {
             <h4>Encircle points :<span>000</span></h4>
             <p>Redeem Encircle points & avail discount</p>
         </div>
-        <div id="cart1">
+   {addCart?.length ?    <div id="cart1">
+    {addCart.map((addCart)=>(
+        <>
             <div  id="leftcart">
                 <div>
                     <div id="productimage">
-                         <img src="https://staticimg.titan.co.in/Tanishq/Catalog/511618JGRABA00.jpg"/> 
+                         <img src={addCart.image}/> 
                     </div>
                     <div>
-                        <p >Emerald Jhumkas</p>
+                        <p >{addCart.name}</p>
                         <p>511618JGRABA002EA007682</p>
                         <p id="productprice"><span><del></del></span></p>
                         <p><span><i class="fa-thin fa-square"></i></span>Add Gift Message</p>
@@ -95,12 +97,12 @@ const Cart = () => {
 
                 <div>
                     <div>
-                        <img src="https://staticimg.titan.co.in/Tanishq/Catalog/51D3B1JDHABA40_1.jpg"/>
+                        <img src={addCart.image}/>
                     </div>
                     <div>
-                        <p>Timeless Ruby And Emerald Jhumkas</p>
+                        <p>{addCart.name}</p>
                         <p>51D3B1JDHABA402BA000024</p>
-                        <p>Rs 76291 <span><del>RS 77458</del></span></p>
+                        <p>Rs {addCart.price} <span><del>RS {addCart.price}</del></span></p>
                         <p><span><i class="fa-thin fa-square"></i></span>Add Gift Message</p>
                     </div>
 
@@ -108,12 +110,12 @@ const Cart = () => {
 
                 <div>
                     <div>
-                    <img src="https://staticimg.titan.co.in/Tanishq/Catalog/51D3B1JDHABA40_1.jpg"/>
+                    <img src={addCart.image}/>
                     </div>
                     <div>
-                        <p>Radiant Traditional Jhumkas</p>
+                        <p>{addCart.name}</p>
                         <p>51D3B1JDHABA402BA000024</p>
-                        <p>Rs 77834 <span><del>RS 75845</del></span></p>
+                        <p>Rs {addCart.price} <span><del>RS {addCart.price}</del></span></p>
                         <p><span><i class="fa-thin fa-square"></i></span>Add Gift Message</p>
                     </div>
 
@@ -156,15 +158,17 @@ const Cart = () => {
                             <h1>TOTAL<span>(Incl of all taxes)</span></h1>
                         </div>
                         <div>
-                            <p>Rs.214530</p>
+                            <p>Rs{addCart.price}</p>
                         <p>Rs.0</p>
                         <p>FREE</p>
-                        <h1>Rs.214530</h1>
+                        <h1>Rs.{addCart.price}</h1>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            </>
+            ))}
+        </div>:<div>loading...</div>}
         </div>
         <div id="footer-cart">
             <div>

@@ -1,5 +1,4 @@
-import { get } from "mongoose";
-import Product from "../Middleware/Product.js";
+import Product from "../Model/Product.js";
 import USER from "../Model/user.js";
 
 export const addProduct=async(req,res)=>{
