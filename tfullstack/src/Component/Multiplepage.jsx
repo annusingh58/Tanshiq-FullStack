@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "../Style/Multiplepage.css"
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from './Context/AuthContext';
 
 const Multiplepage = () => {
     const [products, setProducts] = useState([]);
+    const {state}=useContext(AuthContext);
+    console.log(state);
+    
     const router = useNavigate();
     useEffect(() => {
         async function getAllProducts() {

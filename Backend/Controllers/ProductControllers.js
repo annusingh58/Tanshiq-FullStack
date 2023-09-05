@@ -1,5 +1,6 @@
 import { get } from "mongoose";
 import Product from "../Middleware/Product.js";
+import USER from "../Model/user.js";
 
 export const addProduct=async(req,res)=>{
     try{
@@ -51,5 +52,59 @@ export const getSingleProduct=async(req,res)=>{
         return res.status(200).json({status:200,success:true,product:getProduct})
     } catch (error) {
         return res.status(500).json({status:500, success:false,message:error})
+    }
+}
+
+export const addToCart=async(req,res)=>{
+    try {
+        const{userId,productId}=req.body;
+        if(!userId)return res.status(404).json({status:404,success:false,message:"UserId not found"});
+        if(!productId)return res.status(404).json({status:404,success:false,message:"prodcut Id not found"});
+        
+
+        const user=await USER.findByIdAndUpdate(userId,{$push:{cartProducts:productId}},{new:true})
+        if(!user){
+            return res.status(404).json({status:404,success:false,message:"User not found"});
+ 
+        }
+        else{
+            return res.status(200).json({status:200,success:true,message:"Product added into the cart successfully."})
+
+        }
+    } catch (error) {
+        return res.status(500).json({status:500, success:false,error:error,message:"Internal server error"})
+
+    }
+}
+
+export const getCartProducts=async(req,res)=>{
+    try {
+        const{userId}=req.body;
+        console.log(userId);
+
+        const products=await USER.findById(userId);
+        console.log(products);
+
+        if(products){
+            const cartProducts=products.cartProducts;
+
+            const newproducts=[];
+
+            for(let i=0;i<cartProducts.length;i++){
+                const data=await Product.findById(cartProducts[i]);
+                newproducts.push(data);
+            }
+            return res.status(200).json({status:200,success:true, cartProducts:newproducts})}
+            else{
+             return res.status(400).json({status:400,success:false,message:"Cart is empty"});
+
+            }
+
+        }
+
+        
+     catch (error) {
+     return res.status(500).json({status:500, success:false,error:error,message:"Internal server error"})
+
     }
 }

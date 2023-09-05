@@ -1,7 +1,27 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "../Style/Cart.css";
+import axios from "axios";
+import { AuthContext } from './Context/AuthContext';
 
 const Cart = () => {
+    const[addCart,setAddCart]=useState([]);
+    const{state}=useContext(AuthContext)
+    useEffect(()=>{
+        console.log(state);
+        async function getCartProducts(){
+            try {
+                const response=await axios.post("http://localhost:2000/anu/getCartProducts",{userId:state?.user?._id});
+                if(response.data.success){
+                    setAddCart(response?.data?.cartProducts);
+
+                }
+            } catch (error) {
+                alert(error.response.data.message);
+                
+            }
+        }getCartProducts();
+    },[state])
+    console.log(addCart);
   return (
     <div>
             <div id="screen-cart">

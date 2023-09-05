@@ -1,13 +1,31 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "../Style/Single.css";
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import AuthProtected from './AuthProtected';
+import { AuthContext } from './Context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Singlepage = () => {
     const [product, setProduct] = useState();
+    const router=useNavigate();
     const { id } = useParams();
-    console.log(id);
+
+    const {state}=useContext(AuthContext);
+    console.log(state);
+    // console.log(id);
+
+    async function addCart(){
+        try {
+            const response=await axios.post("http://localhost:/2000/anu/addToCart",{userId:state?.user?._id,productId:id})
+            if(response.data.success){
+                alert(response.data.message);
+                router('/cart')
+            }
+        } catch (error) {
+            alert(error.response.data.message)
+        }
+    }
     useEffect(() => {
         async function getProduct() {
             try {
@@ -102,7 +120,7 @@ const Singlepage = () => {
                                 <p>Gold Purity : 22 Karat</p>
                                 <p>Not sure what to buy? Checkout our <span>Buying Guides</span></p>
 
-                                <button>Notify Me</button>
+                                <button>Add to Cart</button>
 
                             </div>
                             <div>
@@ -245,7 +263,7 @@ const Singlepage = () => {
                             </div>
                         </div>
                     </div>
-                </div
+                </div>
             </AuthProtected>
         </>
     )

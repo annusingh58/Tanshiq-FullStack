@@ -14,6 +14,9 @@ const Home = () => {
             type:"LOGOUT"
         })
     }
+    const redirectToMulti = () =>{
+        router("/multiplepage")
+    }
   return (
     <div id="screen-home">
     <div id="navbar">
@@ -38,9 +41,11 @@ const Home = () => {
                 {username?<p>{username}</p>:<p onClick={()=>router('/login')}>LOGIN</p>}
            
             </div>
-            <div id="switch"></div>
+            <div id="switch">
             <div >
              {username?<button onClick={Logout}>LOGOUT</button>:<button></button>}
+             <p onClick={()=>router('/register')}>Signup</p>
+            </div>
             </div>
 
             <div>
@@ -49,7 +54,7 @@ const Home = () => {
             </div>
             <div>
                 <i class="fa-solid fa-cart-shopping"></i>
-                <p>CART</p>
+                <p onClick={()=>router('/cart')} >CART</p>
             </div> 
         </div>
 
@@ -62,7 +67,7 @@ const Home = () => {
             <p>ALL JEWELLRY</p>
             <p>GOLD</p>
             <p>DIAMOND</p>
-            <p>EARRINGS</p>
+            <p  onClick={redirectToMulti} >EARRINGS</p>
             <p>RINGS</p>
             <p>MIA</p>
             <p>COLLECTION</p>

@@ -35,7 +35,7 @@ const Login = () => {
                     });
                     localStorage.setItem("JWTToken",JSON.stringify(data.token));
                     alert(data.message);
-                    router('/home');
+                    router('/');
                 }
                 
             } catch (error) {
