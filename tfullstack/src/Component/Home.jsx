@@ -19,7 +19,7 @@ const Home = () => {
     }
   return (
     <div id="screen-home">
-    <div id="navbar">
+    {/* <div id="navbar">
         <div id="nb">
             <div>             
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHIvMR55RXNIxhyJbtIomYn-IWTJng7WDhlQ&usqp=CAU"/>
@@ -60,7 +60,7 @@ const Home = () => {
 
         
 
-    </div>
+    </div> */}
 
     <div id="body-home">
         <div>

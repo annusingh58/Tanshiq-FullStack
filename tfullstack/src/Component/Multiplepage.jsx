@@ -29,7 +29,7 @@ const Multiplepage = () => {
     return (
 
         <div id="screen-multiple">
-            <div id="navbar">
+            {/* <div id="navbar">
                 <div id="nb">
                     <div>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHIvMR55RXNIxhyJbtIomYn-IWTJng7WDhlQ&usqp=CAU" />
@@ -62,7 +62,7 @@ const Multiplepage = () => {
 
 
 
-            </div>
+            </div> */}
             <div id="navbar2">
                 <div>
                     <p>ALL JEWELLRY</p>

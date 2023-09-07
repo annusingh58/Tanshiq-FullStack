@@ -6,12 +6,12 @@ dotenv.config();
 
 export const register=async(req,res)=>{
     try {
-        const{name,email,password}=req.body;
+        const{name,email,password,role}=req.body;
         const response=await USER.find({email}).exec();
         if(response.length)return res.status(400).json({status:400,success:false ,message:"user already registered"});
 
         const user=new USER({
-            name,email,password
+            name,email,password,role
         })
         await user.save();
         return res.status(200).json({status:200,success:true,message:"User registered successfuly"})

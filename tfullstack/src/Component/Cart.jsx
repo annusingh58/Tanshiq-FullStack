@@ -25,7 +25,7 @@ const Cart = () => {
   return (
     <div>
             <div className="screen-cart">
-        <div id="navbar">
+        {/* <div id="navbar">
             <div id="nb">
                 <div>             
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHIvMR55RXNIxhyJbtIomYn-IWTJng7WDhlQ&usqp=CAU"/>
@@ -58,7 +58,7 @@ const Cart = () => {
     
             
     
-        </div>
+        </div> */}
         <div id="navbar2">
             <div>
                 <p>ALL JEWELLRY</p>

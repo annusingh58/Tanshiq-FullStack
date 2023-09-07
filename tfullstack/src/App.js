@@ -7,10 +7,12 @@ import Home from './Component/Home';
 import Singlepage from './Component/Singlepage';
 import Multiplepage from './Component/Multiplepage';
 import Cart from './Component/Cart';
+import Navbar from './Global/Navbar';
 
 function App() {
   return (
     <>
+    <Navbar/>
       <Routes>
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/login" element={<Login />}/>
