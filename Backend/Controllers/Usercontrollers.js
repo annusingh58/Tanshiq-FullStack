@@ -9,13 +9,33 @@ export const register=async(req,res)=>{
         const{name,email,password,role}=req.body;
         const response=await USER.find({email}).exec();
         if(response.length)return res.status(400).json({status:400,success:false ,message:"user already registered"});
-
+           
+        var flagForAdmin;
+            if(role=='Admin'){
+                flagForAdmin=false
+            }
+            if(flagForAdmin==false){
         const user=new USER({
-            name,email,password,role
-        })
+            name,
+            email,
+            password,
+            role,
+            isAdminVerified:false
+        });
         await user.save();
-        return res.status(200).json({status:200,success:true,message:"User registered successfuly"})
-    } catch (error) {
+        return res.status(200).json({status:200,success:true,message:"registeration successfuly for admin"})
+    }
+            const user =new USER({
+                name,
+                email,
+                password,
+                role
+            });
+            await user.save();
+            return res.status(200).json({ success: true, message: "Resgistration Succesfull!" })
+
+        }
+     catch (error) {
         return res.status(500).json({status:500,success:false,message:error})
     }
 }
@@ -63,3 +83,16 @@ export const get_currentuser=async(req,res)=>{
 
     }
 }
+
+
+// export const updateuser=async(req,res)=>{
+//     try {
+//         const{email,name}=req.body;
+//         if(!name)return res.send("Name not found")
+        
+//         const response=await USER.findOneAndUpdate({email},{name}).exec();
+//         res.send(response);
+//     } catch (error) {
+//         res.send(error)
+//     }
+// }

@@ -1,12 +1,13 @@
 import express from "express";
 import { get_currentuser, login, register } from "../Controllers/Usercontrollers.js";
 import { loginchk, registerchk } from "../Middleware/auth.js";
-import { addProduct, addToCart, getCartProducts, getSingleProduct, getallproducts } from "../Controllers/ProductControllers.js";
+import { addProduct, addToCart, getCartProducts, getSingleProduct, getallproducts, updateProduct } from "../Controllers/ProductControllers.js";
 
 
 
 const router= express.Router();
 
+router.post('/update-product', updateProduct)
 
 router.post('/register',registerchk ,register);
 router.post('/login',loginchk, login);

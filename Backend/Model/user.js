@@ -10,6 +10,9 @@ const user=new Schema({
         type:String,
         enum:['buyer','seller','admin'],
         default:'buyer'
+    },
+    isAdminVerified:{
+        type:Boolean
     }
 
 });

@@ -1,4 +1,4 @@
-import Product from "../Model/Product.js";
+import Products from "../Model/Product.js";
 import USER from "../Model/user.js";
 
 export const addProduct=async(req,res)=>{
@@ -105,5 +105,22 @@ export const getCartProducts=async(req,res)=>{
      catch (error) {
      return res.status(500).json({status:500, success:false,error:error,message:"Internal server error"})
 
+    }
+}
+
+
+export const updateProduct = async (req, res) => {
+    try {
+        const { name, price, image, _id } = req.body.product;
+        if (!name || !price || !image) throw new Error("Product data not found..")
+
+        const updatedproduct = await Products.findByIdAndUpdate(_id, { name, price, image }, { new: true });
+        if (updatedproduct) {
+            return res.status(200).json({ success: true, message: "Product updated successfully.", product: updatedproduct })
+        }
+        throw new Error("No product found.")
+
+    } catch (error) {
+        return res.status(500).json({ success: false, message: error });
     }
 }
