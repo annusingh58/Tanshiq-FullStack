@@ -1,5 +1,5 @@
 import { createContext, useEffect, useReducer } from "react";
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import axios from "axios";
 
 
@@ -12,8 +12,8 @@ const reducer=(state,action)=>{
         case "LOGIN":
             return {...state,user:action.payload};
         case "LOGOUT":
-            localStorage.removeItem("JWTToken")
-            toast.success("logout suceesfully")
+            // localStorage.removeItem("JWTToken")
+            // toast.success("logout suceesfully")
             return {...state,user:null};
         default:
             return state;
@@ -23,10 +23,27 @@ const reducer=(state,action)=>{
 const HandleAuthContext=({children})=>{
     const [state,dispatch]=useReducer(reducer,initialState);
 
+    const login = (userData) => {
+        if (userData.token) {
+            localStorage.setItem("JWTToken", JSON.stringify(userData.token));
+        }
+        dispatch({
+            type: "LOGIN",
+            payload: userData.payload
+        })
+    }
+
+    const logout = () => {
+        localStorage.removeItem("JWTToken");
+        dispatch({
+            type: "LOGOUT"
+        })
+    }
 
     useEffect(()=>{
         const token =JSON.parse(localStorage.getItem("JWTToken"));
         async function getcurrentuser(){
+            try{
            if(token){
             const response=await axios.post("http://localhost:2000/anu/getcurrentuser",{token})
          
@@ -34,14 +51,18 @@ const HandleAuthContext=({children})=>{
                 dispatch({
                     type:"LOGIN",
                     payload:response?.data?.user
-                })
+                });
             }
            }    
         }
-        getcurrentuser();
+        catch (error) {
+            console.log(error)
+        }
+    }
+     getcurrentuser();
     },[])
     return(
-        <AuthContext.Provider value={{state,dispatch}}>
+        <AuthContext.Provider value={{state,login,logout}}>
             {children}
         </AuthContext.Provider>
     )
