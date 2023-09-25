@@ -29,7 +29,7 @@ const HandleAuthContext=({children})=>{
         }
         dispatch({
             type: "LOGIN",
-            payload: userData.payload
+            payload: userData?.payload
         })
     }
 

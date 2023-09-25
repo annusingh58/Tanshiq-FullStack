@@ -8,7 +8,7 @@ import api from '../ApiConfig';
 
 const Login = () => {
     const[userData,setUserData]=useState({email:"",password:""});
-    const {state,dispatch}=useContext(AuthContext);
+    const {state,login}=useContext(AuthContext);
 
     const router=useNavigate();
     console.log(userData,"userData");
@@ -27,14 +27,14 @@ const Login = () => {
 
                 });
                 console.log(response,"response")
-                const data=response.data;
-                if(data.success){
-                    dispatch({
+                const axiosResponse=await response.data;
+                if(axiosResponse?.success){
+                    login({
                         type:"LOGIN",
-                        payload:data?.user
+                        payload:axiosResponse?.user
                     });
-                    localStorage.setItem("JWTToken",JSON.stringify(data.token));
-                    alert(data.message);
+                    localStorage.setItem("JWTToken",JSON.stringify(axiosResponse?.token));
+                    alert(axiosResponse?.message);
                     router('/');
                 }
                 

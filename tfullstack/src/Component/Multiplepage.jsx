@@ -7,27 +7,29 @@ import { AuthContext } from './Context/AuthContext';
 
 const Multiplepage = () => {
     const [products, setProducts] = useState([]);
-    const {state}=useContext(AuthContext);
+    const { state } = useContext(AuthContext);
     console.log(state);
-    
+
     const router = useNavigate();
     useEffect(() => {
         async function getAllProducts() {
             try {
                 const response = await axios.get("http://localhost:2000/anu/getallproducts");
                 if (response) {
-                    setProducts(response.data.products);
-                    console.log(response.data.products);
+                    setProducts(response?.data?.products);
+                    console.log(response?.data?.products);
                 }
             } catch (error) {
-                toast(error.response.data.message)
+                if (!error.response.data.message) {
+                    toast(error.response.data.message)
+                }
             }
         }
         getAllProducts();
     }, [])
 
     return (
-
+        <>
         <div id="screen-multiple">
             {/* <div id="navbar">
                 <div id="nb">
@@ -82,7 +84,7 @@ const Multiplepage = () => {
                 <div>
                     <p>PRICE<span><i class="fa-solid fa-chevron-down"></i></span></p>
                     <p>JEWELLERY TYPE<span><i class="fa-solid fa-chevron-down"></i></span></p>
-                    <p>PRODUCT<span><i class="fa-solid fa-chevron-down"></i></span></p>
+                    <p onClick={()=>router('/addfrom')}>PRODUCT<span><i class="fa-solid fa-chevron-down"></i></span></p>
                     <p>GENDER<span><i class="fa-solid fa-chevron-down"></i></span></p>
                     <p>BRAND<span><i class="fa-solid fa-chevron-down"></i></span></p>
                     <p>METAL COLOUR<span><i class="fa-solid fa-chevron-down"></i></span></p>
@@ -114,7 +116,7 @@ const Multiplepage = () => {
 
                 {products?.length ? <div id="body2-multiple">
                     {products.map((product) => (
-                        <div onClick={()=>router(`/single/${product._id}`)}>
+                        <div onClick={() => router(`/single/${product._id}`)}>
                             <div>
                                 <img src={product.image} />
                             </div>
@@ -422,7 +424,7 @@ const Multiplepage = () => {
             </div>
 
         </div>
-
+        </>
 
 
 

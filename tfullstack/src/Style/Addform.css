@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.screen-form{
+    height:250px;
+    width: 30%;
+    margin: auto;
+    padding: 15px;
+    margin-top: 100px;;
+    /* border: 1px solid red; */
+}
+.screen-form>h1{
+    text-align: center;
+    margin-bottom: 5px;
+    color: brown;
+}
+
+
+.form-Addproduct{
+    height: 250px;
+    width: 100%;
+    /* border:1px solid red; */
+}
+.form-Addproduct>div>input{
+    height: 40px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding-left: 5px;
+    border:1px solid brown;
+}
+.form-Addproduct>div:nth-child(4)>input{
+    width: 50%;
+    margin-left:80px;
+    background-color: brown;
+    color: white;
+}

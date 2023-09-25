@@ -59,7 +59,7 @@ const Navbar = () => {
 
     <div>
         <i class="fa-regular fa-heart"></i>
-        <p>WISHLIST</p>
+        <p onClick={()=>router('/register')}>Register</p>
     </div>
     <div>
         <i class="fa-solid fa-cart-shopping"></i>

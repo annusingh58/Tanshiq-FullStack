@@ -8,6 +8,7 @@ import Singlepage from './Component/Singlepage';
 import Multiplepage from './Component/Multiplepage';
 import Cart from './Component/Cart';
 import Navbar from './Global/Navbar';
+import Addform from './Component/Addform';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route exact path="/single/:id" element={<Singlepage/>}/>
         <Route exact path="/multiplepage" element={<Multiplepage/>}/>
         <Route exact path="/cart" element={<Cart />}/>
+        <Route exact path="/addform" element={<Addform />}/>
+
         
       </Routes>
     
