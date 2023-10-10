@@ -73,7 +73,7 @@ const Multiplepage = () => {
                     <p>EARRINGS</p>
                     <p>RINGS</p>
                     <p>MIA</p>
-                    <p>COLLECTION</p>
+                    <p onClick={()=> router('/addform')}>ADD PRODUCT</p>
                     <p>RIVAAH</p>
                     <p>GOLDEN HARVEST</p>
                     <p>CORPORATE GIFTING</p>
